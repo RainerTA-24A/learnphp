@@ -1,26 +1,13 @@
 <?php
-$test = 10;
-$test = 10 + 10;
-$test = 10 - 10;
-$test = 10 * 10;
-$test = $test + 10;
-$test = 2 ** 2;
-$test = 5 % 2;
-$test += 3;
-$test -= 10;
-$test *= 10;
-$test /= 10;
-$test %= 10;
-$test **= 10;
-$test = 10;
-$test++;
-$test--;
---$test;
-++$test;
- 
-$a = 1;
-$b = ++$a;
-var_dump($b, $a);
- 
-$test = sin(pi());
-var_dump($test);
+$test = 'yolo';
+$test = 'yolo' . ' life';
+$name = 'Rainer';
+$age = 33;
+$test = $name . ' is ' . $age . ' years old!';
+$test ? "$name is $age yearss old!" : 'No name or age provided.';
+$test = '$name is $age years old!';
+$test = "$name is $age years old!";
+$test = 'don\'t';
+$test = "don't\nU!";
+var_dump($test)
+?>
