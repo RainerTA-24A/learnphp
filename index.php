@@ -1,13 +1,13 @@
 <?php
-$test = 'yolo';
-$test = 'yolo' . ' life';
-$name = 'Rainer';
-$age = 33;
-$test = $name . ' is ' . $age . ' years old!';
-$test ? "$name is $age yearss old!" : 'No name or age provided.';
-$test = '$name is $age years old!';
-$test = "$name is $age years old!";
-$test = 'don\'t';
-$test = "don't\nU!";
-var_dump($test)
+$test = true;
+$test = false;
+$test = true && false;
+$test = false || true;
+$test = !true;
+$test = !false;
+$test = (true && false) || false ||  (true && !false);
+$test = true xor false;
+$test = true and false;
+$test = true or false;
+var_dump( $test );
 ?>
