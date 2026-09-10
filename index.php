@@ -27,12 +27,12 @@ var_dump($box1, $box2);
 $numbers = [1,2,3,4,5];
 for($i=0;$i<count($numbers);$i++) {
     $n = $numbers[$i];
-    $n+1;
+    $n+=1;
     var_dump($n);
 }
  
 $numbers = [1,2,3,4,5];
 foreach($numbers as $n) {
-    $n+1;
+    $n+=1;
 }
 var_dump($numbers);
