@@ -1,33 +1,16 @@
 <?php
 
-function hello() {
-    var_dump('Hello');
-}
+$test = function () {
+    var_dump('Shh');
+};
 
-hello();
+var_dump($test);
 
-function helloName($name='Nameless', $age='unknown') {
-    var_dump("Hello, $name! You are $age years old!");
-}
+$test();
+call_user_func($test);
 
+$numbers = [1,2,3,4,5];
 
-helloname();
-function square(int $a): int {
-    if($a < 0) {
-        return 0;
-    } 
-    return $a * $a;
-}
+$squares = array_map(fn ($n) => $n*$n, $numbers);
+var_dump($squares);
 
-$answer = square(2);
-var_dump($answer);
-
-function recursion($i) {
-    if($i < 10){
-        var_dump($i);
-        recursion($i+1);
-    }
-}
-
-
-recursion(0);
