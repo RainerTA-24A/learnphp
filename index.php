@@ -1,44 +1,33 @@
 <?php
 
-/*for ($i = 0; $i < 10; $i++) {
-    var_dump($i);
+function hello() {
+    var_dump('Hello');
 }
 
-for ($i = 9; $i >0; $i--){
-    var_dump($i);
+hello();
+
+function helloName($name='Nameless', $age='unknown') {
+    var_dump("Hello, $name! You are $age years old!");
 }
 
-for ($i = 2; $i<1_000_000; $i*=2){
-    var_dump($i);
-}*/
 
-$time = time();
-$i=0;
-/*while(time() < $time+1){
-    var_dump($i++);
-}*/
-
-while(false){
-    var_dump('WHILE');
+helloname();
+function square(int $a): int {
+    if($a < 0) {
+        return 0;
+    } 
+    return $a * $a;
 }
 
-do {
-    var_dump('DO');
-} while(false);
+$answer = square(2);
+var_dump($answer);
 
-/*for(;;){
-Kõige lühem loop
-}*/
-
-
-$fruits = ['Apple', 'Banana', 'Cherry', 'Pickles'];
-foreach($fruits as $fruit){
-    var_dump($fruit);
+function recursion($i) {
+    if($i < 10){
+        var_dump($i);
+        recursion($i+1);
+    }
 }
 
-foreach($fruits as $key=>&$fruit){
-    var_dump($key, $fruit);
-    $fruit = 'asdada';
-}
 
-var_dump($fruits);
+recursion(0);
