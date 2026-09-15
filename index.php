@@ -31,8 +31,27 @@ class MetalBox extends Box
     }
 }
 
+trait HasColor
+{
+    public $color;
+    public function showColor()
+    {
+        return $this->color;
+    }
+}
 
-$metall = new MetalBox(1, 2, 3);
+trait HasSmell
+{
+    public $smell;
+    public function sniff()
+    {
+        return $this->smell;
+    }
+}
+
+
+
+$metal1 = new MetalBox(1, 2, 3);
 $metal1->weightPerUnit = 1;
 var_dump($metal1->mass(), $metal1);
 
