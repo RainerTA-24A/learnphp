@@ -7,54 +7,33 @@ class Box
 
     public function __construct(public $width, public $height, public $length)
     {
-        var_dump('Object Created');
+
     }
+
     public function open()
     {
         $this->isOpen = true;
     }
 
-    public function __call($name, $args)
+    public function volume()
     {
-        var_dump($name, $args);
-    }
-    public function __set($name, $value)
-    {
-        var_dump($name, $value);
-    }
-
-    public function __get($name)
-    {
-        var_dump($name);
-        return 'Cool value';
-
-    }
-
-    public function __invoke()
-    {
-        var_dump('I am a function');
-    }
-    public function __tostring()
-    {
-        return 'Im a box';
-    }
-
-    public function __destruct()
-    {
-        var_dump("Object Destroyed");
+        return $this->width * $this->height * $this->length;
     }
 }
 
-function test()
+class MetalBox extends Box
 {
-    $box2 = new Box(1, 2, 3);
+    public $weightPerUnit;
+
+    public function mass()
+    {
+        return $this->weightPerUnit * $this->volume();
+    }
 }
 
-test();
-$box1 = new Box(1, 2, 3);
-var_dump($box1);
-echo $box1;
-$box1->meow = "Lol";
-var_dump($box1->coolio);
-$box1();
-$box1->hello(1, 'asdasd');
+
+$metall = new MetalBox(1, 2, 3);
+$metal1->weightPerUnit = 1;
+var_dump($metal1->mass(), $metal1);
+
+?>
