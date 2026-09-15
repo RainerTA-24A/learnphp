@@ -2,6 +2,7 @@
 
 class Box
 {
+    use HasSmell;
     public $isOpen = false;
     public $hasBeenOpened = false;
 
@@ -23,6 +24,7 @@ class Box
 
 class MetalBox extends Box
 {
+    use HasColor, HasSmell;
     public $weightPerUnit;
 
     public function mass()
@@ -54,5 +56,6 @@ trait HasSmell
 $metal1 = new MetalBox(1, 2, 3);
 $metal1->weightPerUnit = 1;
 var_dump($metal1->mass(), $metal1);
+
 
 ?>
