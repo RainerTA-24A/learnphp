@@ -18,6 +18,9 @@ switch ($_SERVER['REQUEST_URI']) {
     case '/us':
         include __DIR__ . '/../views/us.php';
         break;
+    case '/technology':
+        include __DIR__ . '/../views/technology.php';
+        break;
     default:
         echo '404';
 }
