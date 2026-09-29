@@ -6,7 +6,7 @@ class Router
 {
     /**  @var Route[] $routes */
     private static $routes = [];
-    public static function addRoute(string $path, callable $action)
+    public static function addRoute(string $path, callable|array $action)
     {
         self::$routes[] = new Route($path, $action);
     }
@@ -15,7 +15,10 @@ class Router
         return self::$routes;
     }
 
-    public function __construct(private $path) {}
+    public function __construct(private $path)
+    {
+        $this->path = parse_url($this->path, PHP_URL_PATH);
+    }
 
     public function match(): Route | false
     {
