@@ -8,7 +8,7 @@ services:
       MARIADB_ROOT_PASSWORD: example
       MARIADB_DATABASE: learnphp
     ports:
-    - 3306:3306
+    - 33061:3306
     volumes:
       - ta24adbdata:/var/lib/mysql
 
