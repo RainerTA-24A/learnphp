@@ -19,7 +19,7 @@ class AuthController
         $user = new User();
         $user->name = $_POST['name'];
         $user->email = $_POST['email'];
-        $user->password = password_hash($_POST['name'] . $_POST['email'] . $_POST['password'] . md5('yolo'), PASSWORD_BCRYPT);
+        $user->password = password_hash($_POST['password'], PASSWORD_DEFAULT);
         $user->save();
         redirect('/login');
     }
@@ -31,15 +31,17 @@ class AuthController
     {
         $users = User::where('email', $_POST['email']);
         $user = $users ? $users[0] : null;
-        if (!$user || !password_verify($_POST['name'] . $_POST['email'] . $_POST['password'] . md5('yolo'), $user->password)) {
+        if (!$user || !password_verify($_POST['password'], $user->password)) {
             return redirect('/login');
         }
+        session_regenerate_id(true);
         $_SESSION['userID'] = $user->id;
-        redirect('/');
+        return redirect('/');
     }
     public function logout()
     {
-        unset($_SESSION['userID']);
-        redirect('/');
+        $_SESSION = [];
+        session_destroy();
+        return redirect('/');
     }
 }
