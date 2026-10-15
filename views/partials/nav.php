@@ -27,20 +27,20 @@
                         <circle cx="10.5" cy="10.5" r="7.5"></circle>
                         <path d="M21 21l-5.2-5.2"></path>
                     </svg>
-                    </a>
-                    <?php if (auth()): ?>
-                        <div class="dropdown">
-                            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                <?= auth()->name ?>
-                            </button>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="/logout">Logout</a></li>
-                            </ul>
-                        </div>
-                    <?php else: ?>
-                        <a class="btn btn-sm btn-outline-secondary" href="/register">Sign up</a>
-                        <a class="btn btn-sm btn-outline-primary" href="/login">Login</a>
-                    <?php endif ?>
+                </a>
+                <?php if (auth()): ?>
+                    <div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <?= auth()->name ?>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="/logout">Logout</a></li>
+                        </ul>
+                    </div>
+                <?php else: ?>
+                    <a class="btn btn-sm btn-outline-secondary" href="/register">Sign up</a>
+                    <a class="btn btn-sm btn-outline-primary" href="/login">Login</a>
+                <?php endif ?>
             </div>
         </div>
     </header>
@@ -51,7 +51,7 @@
             <a class="nav-item nav-link link-body-emphasis" href="/technology">Technology</a>
             <a class="nav-item nav-link link-body-emphasis" href="/form">Form</a>
             <a class="nav-item nav-link link-body-emphasis" href="/admin/posts">Posts</a>
-            <a class="nav-item nav-link link-body-emphasis" href="#">Business</a>
+            <a class="nav-item nav-link link-body-emphasis" href="/admin/users">Users</a>
             <a class="nav-item nav-link link-body-emphasis" href="#">Politics</a>
             <a class="nav-item nav-link link-body-emphasis" href="#">Opinion</a>
             <a class="nav-item nav-link link-body-emphasis" href="#">Science</a>
