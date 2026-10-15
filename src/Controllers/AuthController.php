@@ -34,14 +34,12 @@ class AuthController
         if (!$user || !password_verify($_POST['password'], $user->password)) {
             return redirect('/login');
         }
-        session_regenerate_id(true);
         $_SESSION['userID'] = $user->id;
-        return redirect('/');
+        redirect('/');
     }
     public function logout()
     {
-        $_SESSION = [];
-        session_destroy();
-        return redirect('/');
+        unset($_SESSION['userID']);
+        redirect('/');
     }
 }
